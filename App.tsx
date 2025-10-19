@@ -162,20 +162,20 @@ const App: React.FC = () => {
 
       <header className="sticky top-0 z-10 w-full bg-gray-900/80 backdrop-blur-sm border-b border-cyan-500/20">
         <div className="w-full text-center py-3 px-4">
-          <p className="text-gray-400 text-base">اختر المرشح الذي تراه الأنسب</p>
+          <p className="text-gray-400 text-sm sm:text-base">اختر المرشح الذي تراه الأنسب</p>
           {isPollClosed ? (
-              <p className="text-red-500 mt-2 text-lg font-semibold">تم إغلاق الاستفتاء</p>
+              <p className="text-red-500 mt-2 text-base sm:text-lg font-semibold">تم إغلاق الاستفتاء</p>
           ) : (
-              <p className="text-yellow-500 mt-2 text-lg font-semibold">يغلق الاستفتاء يوم الجمعة القادم</p>
+              <p className="text-yellow-500 mt-2 text-base sm:text-lg font-semibold">يغلق الاستفتاء يوم الجمعة القادم</p>
           )}
         </div>
       </header>
 
-      <main className="w-full flex-grow flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-8">
+      <main className="w-full flex-grow flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-6 md:py-8">
           {(hasVoted || isPollClosed) ? (
             <ResultsChart results={results} candidates={CANDIDATES} />
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full max-w-6xl">
               {CANDIDATES.map((candidate) => (
                 <CandidateCard
                   key={candidate.id}
